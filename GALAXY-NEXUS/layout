@@ -1,0 +1,73 @@
+parts {
+   
+   device {
+        display {
+            width   720
+            height  1280
+            x       0
+            y       0
+        }
+    }
+    
+    portrait {
+        background {
+            image   background_port.png
+        }
+        
+    }
+    
+    landscape {
+        background {
+            image   background_land.png
+        }
+        
+        
+    }
+    
+}
+
+layouts {
+    portrait {
+        width     1148
+        height    1994
+        color     0xffffff
+        event     EV_SW:0:1
+        
+        part1 {
+            name    portrait
+            x       0
+            y       0
+        }
+
+        part2 {
+            name    device
+            x       216
+            y       353
+        }
+    }
+    
+    landscape {
+        width     1994
+        height    1148
+        color     0xffffff
+        event     EV_SW:0:0
+        
+        part1 {
+            name    landscape
+            x       0
+            y       0
+        }
+
+        part2 {
+            name    device
+            x       371
+            y       919
+            rotation  3
+        }
+    }
+}
+
+network {
+    speed  full
+    delay  none
+}
